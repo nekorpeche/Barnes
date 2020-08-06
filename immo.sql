@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 06 août 2020 à 14:58
+-- Généré le :  jeu. 06 août 2020 à 15:42
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `bien` (
   `nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prix` int(11) NOT NULL,
   `date` date NOT NULL,
-  `descriptif` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `descriptif` text COLLATE utf8mb4_unicode_ci,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -44,17 +44,17 @@ CREATE TABLE IF NOT EXISTS `bien` (
 --
 
 INSERT INTO `bien` (`id`, `nom`, `prix`, `date`, `descriptif`, `image`) VALUES
-(1, 'Maison à vendre - Villemomble', 200000, '2020-08-05', 'Belle et pas cher', 'maison_villemomble.jpg'),
-(2, 'Studio à vendre - Paris', 620000, '2020-08-02', 'Studio en bon état au cœur de Paris ! ', 'studio_paris.jpg'),
-(7, 'Villa - Nanterre', 900000, '2020-07-13', 'Villa prestigieuse proche de la gare ! Acheteurs non sérieux s\'abstenir ', 'villa_nanterre.jpg'),
-(10, 'Appartement - Saint-Ouen', 300000, '2020-08-01', 'Appartement de 5 pièces, bâtiment récent rien à prévoir !', 'appart_saintOuen.jpg'),
-(11, 'Maison d\'Architecte - Vannes', 600000, '2020-07-05', 'Maison d\'architecte moderne avec panneaux solaires. 6 pièces, prix ferme.', 'maison_vannes.jpg'),
-(12, 'Loft - Nanterre', 850000, '2020-07-20', 'Loft situé à Nanterre près de la gare de la Défense. Loft de 5 pièces.', 'loft_nanterre.jpg'),
-(13, 'Villa Le Chêne - Nice', 3200000, '2020-05-04', 'Vue imprenable sur la mer. Villa composée de 7 chambres, deux salles de séjour et d\'un jardin de 100m². ', 'villa_chene.jpg'),
-(14, 'Loft - Paris', 899000, '2020-06-01', 'Loft avec vue sur la Tour-Eiffel. 3 chambres, vue imprenable, à ne pas rater !', 'loft_paris.jpg'),
-(15, 'Appartement - Clamart', 400000, '2020-07-06', 'Appartement 5 grandes pièces. Commerces et écoles à proximité, parfait pour une famille !', 'appartement_clamart.jpg'),
-(16, 'Villa Brigitte - Paris XI', 4000000, '2020-05-11', 'Situé en plein coeur de Paris, la villa est composée de 3 étages accessibles en ascenseurs, dont 11 chambres réparties dans les trois étages.', 'villa_brigitte.png'),
-(17, 'Maison - Montmorency', 800000, '2020-08-05', 'Maison de 7 pièces avec possibilité de garer 3 voitures dans la cour', 'maison_montmorency.jpg');
+(1, 'Maison à vendre - Villemomble', 200000, '2020-08-05', 'Maison à étage de 87 m² avec garage intégré, comprenant au rez-de-chaussée une pièce de vie traversante de 35 m² avec une cuisine ouverte et un WC. A l\'étage, 3 chambres avec emplacements placards, une salle de bains spacieuse et un grand dressing. Maison basse consommation (RT 2012), équipée de détecteurs de fumée, une box domotique avec gestionnaire d\'énergie, chauffage par pompe à chaleur AIR/AIR et radiateurs à pilotage intelligent. ', 'maison_villemomble.jpg'),
+(2, 'Studio à vendre - Paris', 620000, '2020-08-02', 'Charmant appartement meublé 2 pièces / grand studio, donnant sur le Sacrée Coeur. D\'une surface de 37 m³, le bien est situé au 7ème étage avec ascenseur, offrant une entrée, une cuisine équipée indépendante (plaques de cuisson, four/four à micro-ondes, réfrigérateur), un vaste séjour avec rangement, une salle de douche et un WC séparé.Calme. Box de rangement disponible à l\'étage. ', 'studio_paris.jpg'),
+(7, 'Villa - Nanterre', 900000, '2020-07-13', 'NANTERRE à deux pas du Centre-Ville, dans une rue recherchée et résidentiel, à proximité immédiate des commerces, des écoles et de la gare de Nanterre Ville. Maison familiale baignée de lumière, au calme et non mitoyenne. Au rez-de-chaussée, entrée, pièce de vie traversante Est-Ouest avec cheminée, une cuisine ouverte, une véranda, une chambre parentale avec salle de bains avec baignoire et douche, un bureau et un WC.', 'villa_nanterre.jpg'),
+(10, 'Appartement - Saint-Ouen', 300000, '2020-08-01', 'Dans une excellente copropriété récente de standing. A proximité de toutes commodités (Métro 13 et future Ligne 14, écoles, commerces), au pied du parc des DOCKS. Venez visiter ce charmant 3 pièces aux prestations de qualités. Calme et fonctionnel vous serez conquis par son agencement optimal et la qualité de ses finitions intérieur. Il se compose d\'une entrée, d\'un grand séjour donnant sur un agréable balcon, une belle cuisine US de qualité, deux chambres, une grande salle d\'eau et un WC séparé. ', 'appart_saintOuen.jpg'),
+(11, 'Maison d\'Architecte - Vannes', 600000, '2020-07-05', 'Proche du centre ville de Vannes, des écoles, commerces et réseaux de bus, Pierres et Mer vous présente cette très belle maison d\'Architecte d\'environ 220 m² avec 6 grandes chambres.\r\nSur un terrain, d\'environ 515 m² orienté plein sud avec une piscine chauffée, dans un cadre bucolique, vous profiterez pleinement du calme en ville.\r\nVous serez séduits par les grands volumes, la luminosité et les prestations de qualité de cette maison conviviale et très agréable à vivre.', 'maison_vannes.jpg'),
+(12, 'Loft - Nanterre', 850000, '2020-07-20', 'NANTERRE Préfecture proche RER A et Parc André MALRAUX\r\n\r\nDans une copropriété proche des commerces et transports, locaux indépendants sur 2 niveaux avec accès PMR..\r\n\r\n1er Niveau; accueil sous véranda, plusieurs pièces, bureaux, cuisine, WC.\r\n\r\n2e niveau accessible par escalier intérieur comprenant 2 terrasses et des bureaux.\r\n\r\nLes locaux sont divisibles avec 2 escaliers existants et 2 lots de copropriété pour la désignation.\r\n\r\nA rénover idéal profession et habitation', 'loft_nanterre.jpg'),
+(13, 'Villa Le Chêne - Nice', 3200000, '2020-05-04', 'Luxueuse maison Grande maison avec des prestations et des finitions haut-de-gamme. Confort absolu avec grandes salles d\'eau, grandes cuisines, grandes pièces, électricité high-tech, piscine couverte, jacuzzi, salon d\'été, le tout avec des matériaux luxueux et recherchés. Un artiste réputé a d\'ailleurs participé à l\'aménagement de la maison, notamment pour les portes ainsi que pour des détails de décoration, tous signés bien évidemment. Nombreuses places de parking, cellier, double garage, alarme, volets roulants électriques, luxueuses baies vitrées, les portes extérieures sont blindées, tout est là pour faire de cette maison un produit d\'exception.', 'villa_chene.jpg'),
+(14, 'Loft - Paris', 899000, '2020-06-01', ' Magnifique Loft industriel dans le quartier typique et prisé de la Butte-aux-Cailles. Grand loft de 215 m² habitables (201,27 m² Loi Carrez) avec une hauteur sous verrière à 11,50 m² sous faîtage. Dans sa composition actuelle il présente une cuisine ouverte sur un double séjour. Autour d\'un immense puits de lumière, se développent sur deux plateaux juxtaposés: 3 chambres disposant chacune leur salle de bains, un bureau, une buanderie, une chaufferie. Des rénovations importantes à prévoir (reprise de la verrière + rafraîchissement déco)., fort potentiel, possibilité d\'agrandir la surface habitable.', 'loft_paris.jpg'),
+(15, 'Appartement - Clamart', 400000, '2020-07-06', 'Quartier Schneider, proche du bois, appartement 4 pièces en duplex, atypique et lumineux, en rez-de-jardin d\'une petite copropriété récente de 5 appartements. Cet appartement d\'environ 105 m² comprend un bel espace à vivre de 53 m² composé d\'un séjour et d\'une cuisine ouverte, de plain pied sur la grande terrasse en bois et le jardin, 3 chambres, une salle de bains (possibilité de créer une deuxième salle d\'eau). Excellent état général. ', 'appartement_clamart.jpg'),
+(16, 'Villa Brigitte - Paris XI', 4000000, '2020-05-11', 'Verdure, calme et lumière. Maison entièrement écologique au coeur du 11ème arrondissement. Dans un design moderne, tout en bois et verrières, cette maison conçue entre ciel et verdure propose 2 espaces de réception dont un en mezzanine sous verrière baigné de lumière, 5 chambres haut de gamme dont 2 suites, 5 salles de bains et WC (japonais) privatifs, 1 bureau, 1 cuisine dînatoire. L\'ensemble donne sur un jardin de 350m² offrant une grande variété d\'arbres (chêne, figuier, pin, tilleul, érable du japon, néflier..). La toiture s\'articule en 3 parties, l\'une végétalisée, l\'autre abritant 5 ruches actives et la verrière photovoltaïque. ', 'villa_brigitte.png'),
+(17, 'Maison - Montmorency', 800000, '2020-08-05', 'Idéalement située dans le centre-ville de Montmorency à proximité des écoles, transports et commerces, cette maison récente édifiée sur un terrain de 337 m² dispose de nombreux atouts pour vous séduire. Cette maison conforme à la RT2012 qui assure des performances énergétiques optimales des bâtiments est sortie de terre en 2020 et bénéficie d\'un ensoleillement maximal grâce à son exposition plein SUD. Au rez-de-chaussée, vous trouverez une entrée, un séjour double avec une cuisine ouverte à aménager d\'une belle surface de 46 m² ainsi qu\'un cellier.', 'maison_montmorency.jpg');
 
 -- --------------------------------------------------------
 
